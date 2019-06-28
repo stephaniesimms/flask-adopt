@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} {{pet.name}} {% endblock %}
+
+{% block content %}
+
+<div>
+    <p>{{ pet.name }}</p>
+    <img src="{{ pet.photo_url }}" alt="">
+</div>
+
+{% endblock %}
