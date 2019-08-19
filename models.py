@@ -1,4 +1,4 @@
-"""Models for Adoption."""
+"""Models for Pet Adoption"""
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()

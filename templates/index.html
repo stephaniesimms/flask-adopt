@@ -10,15 +10,28 @@
 <ul>
     {% for pet in show_pets %}
     <li>
-        <a href="/{{ show_pets.photo_url }}">{{ pet.name }} </a>
-    </li>
-        {% if pet.available %}
-            <span><strong>Available</strong></span>
+        {% if pet.photo_url %}
+        <img src="{{ pet.photo_url }}" class="img-fluid" alt="{{ pet.name }}">
         {% endif %}
+        
+        <a href="/{{ pet.id }}">{{ pet.name }} </a>
+        {% if pet.available %} 
+        <span><strong>is available</strong></span>
+        {% endif %}
+
     {% endfor %}
+    </li>
 </ul>
 
 <!-- Add a pet -->
 <a href="/add" class="btn btn-info">Add</a>
+
+
+<h2>Random Pet Finder Pet</h2>
+<div>
+    <p>
+        Name: {{pet_data.name}} 
+    </p>
+</div>
 
 {% endblock %}

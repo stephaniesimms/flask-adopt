@@ -4,9 +4,20 @@
 
 {% block content %}
 
-<div>
-    <p>{{ pet.name }}</p>
-    <img src="{{ pet.photo_url }}" alt="">
-</div>
+<h1>My name is {{ pet.name }}</h1>
+
+{% if pet.photo_url %}
+    <img src="{{ pet.photo_url }}" class="img-fluid" alt="{{ pet.name }}">
+{% endif %}
+
+{% if pet.age %}
+    <p>I am {{ pet.age }} years old</p>
+{% endif %}
+
+{% if pet.species %}
+    <p>I am a {{ pet.species }}</p>
+{% endif %}
+
+<a href="/{{ pet.id }}/edit" class="btn btn-info">Edit</button>
 
 {% endblock %}
